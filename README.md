@@ -1,4 +1,4 @@
-This is an Office 365 (2019) installer for linux, with the help of wine :)
+This is an Office 365 (2019) installer for linux, with the help of wine :)  
 Only Word/Excel/Powerpoint in this version.
 No licence provided of course, you must connect to your account to use your own licence of the product.
 

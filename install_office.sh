@@ -18,13 +18,20 @@ sudo apt update >> ./setup.log 2>&1
 sudo apt install -y --install-recommends winehq-stable >> ./setup.log 2>&1
 fi
 
+echo " > Creating Microsoft_Office_365 prefix...";echo
 mkdir -p "$HOME/Microsoft_Office_365"
-WINEARCH=win32 WINEPREFIX="$HOME/Microsoft_Office_365" winecfg /v win7
+WINEARCH=win32 WINEPREFIX="$HOME/Microsoft_Office_365" winecfg /v win7 >> ./setup.log 2>&1
 while pgrep wine > /dev/null; do sleep 1; done
 sleep 2
 
 echo;echo " > Extracting archive, please wait...";echo
+if [ -f "./files/Microsoft_Office_365.tar.xz" ]; then
 tar -xf ./files/Microsoft_Office_365.tar.xz -C "$HOME/"
+else
+cat ./files/Microsoft_Office_365_part_* > ./files/Microsoft_Office_365.tar.xz
+rm -f ./files/Microsoft_Office_365_part_*
+tar -xf ./files/Microsoft_Office_365.tar.xz -C "$HOME/"
+fi
 
 cp -f ./files/hkeyuser.reg "$HOME/Microsoft_Office_365/drive_c"
 sed -i 's/XXuserXX/'"$USER"'/g' "$HOME/Microsoft_Office_365/drive_c/hkeyuser.reg"

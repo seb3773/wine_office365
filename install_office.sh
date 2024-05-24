@@ -35,7 +35,7 @@ fi
 
 cp -f ./files/hkeyuser.reg "$HOME/Microsoft_Office_365/drive_c"
 sed -i 's/XXuserXX/'"$USER"'/g' "$HOME/Microsoft_Office_365/drive_c/hkeyuser.reg"
-WINEPREFIX="$HOME/Microsoft_Office_365" regedit /S "$HOME/Microsoft_Office_365/drive_c/hkeyuser.reg"
+WINEPREFIX="$HOME/Microsoft_Office_365" regedit /S "$HOME/Microsoft_Office_365/drive_c/hkeyuser.reg"  >> ./setup.log 2>&1
 while pgrep wine > /dev/null; do sleep 1; done
 sleep 2
 rm "$HOME/Microsoft_Office_365/drive_c/hkeyuser.reg"

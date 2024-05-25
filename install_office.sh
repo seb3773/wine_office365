@@ -54,8 +54,11 @@ echo;echo
 sudo cp -f ./files/word.png /usr/share/icons/hicolor/128x128/apps
 sudo cp -f ./files/excel.png /usr/share/icons/hicolor/128x128/apps
 sudo cp -f ./files/powerpoint.png /usr/share/icons/hicolor/128x128/apps
-sudo cp -f ./files/Word.desktop /usr/share/applications/
-sudo cp -f ./files/Excel.desktop /usr/share/applications/
-sudo cp -f ./files/PowerPoint.desktop /usr/share/applications/
+sudo cp -f ./files/Word.desktop "$HOME/.local/share/applications/"
+sudo sed -i "s|\$HOME|$HOME|g" "$HOME/.local/share/applications/Word.desktop"
+sudo cp -f ./files/Excel.desktop "$HOME/.local/share/applications/"
+sudo sed -i "s|\$HOME|$HOME|g" "$HOME/.local/share/applications/Excel.desktop"
+sudo cp -f ./files/PowerPoint.desktop "$HOME/.local/share/applications/"
+sudo sed -i "s|\$HOME|$HOME|g" "$HOME/.local/share/applications/PowerPoint.desktop"
 echo;echo " > Microsoft Office 365 installation done.";echo
 echo " > script finished.";echo;else echo " > Exited.";echo;fi

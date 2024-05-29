@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+X-TDE-StartupNotify=true
+StartupWMClass=powerpnt.exe
+Terminal=false
+Categories=Application;Office;Presentation;
+MimeType=application/ppt;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroEnabled.12;application/vnd.ms-powerpoint.slideshow.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slideshow;
+Icon=powerpoint
+Exec="$HOME/Microsoft_Office_365/powerpnt.sh" %u
+Name=PowerPoint
+Comment=Microsoft Powerpoint
